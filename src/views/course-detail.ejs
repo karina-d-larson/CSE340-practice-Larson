@@ -4,6 +4,7 @@
     <header class="course-header">
         <h1><%= course.title %></h1>
         <p class="course-id"><%= course.id %></p>
+        <p class="course-department"><%= course.department %></p>
         <p class="course-credits"><%= course.credits %> credits</p>
         <p class="course-description"><%= course.description %></p>
     </header>
@@ -18,7 +19,7 @@
             </nav>
         </div>
         <div class="section-list">
-            <% sections.forEach((section) => { %>
+            <% course.sections.forEach((section) => { %>
             <article class="section-card">
                 <p class="section-time"><%= section.time %></p>
                 <p class="section-room"><%= section.room %></p>
@@ -26,6 +27,20 @@
             </article>
             <% }) %>
         </div>
+    </section>
+
+    <section class="query-params">
+        <h2>Query Parameters</h2>
+        <% const queryEntries = Object.entries(queryParams || {}); %>
+        <% if (queryEntries.length === 0) { %>
+            <p>No query parameters were provided.</p>
+        <% } else { %>
+            <ul>
+                <% queryEntries.forEach(([key, value]) => { %>
+                    <li><%= key %>: <%= value %></li>
+                <% }) %>
+            </ul>
+        <% } %>
     </section>
 
     <p class="back-link"><a href="/catalog">Back to Course Catalog</a></p>

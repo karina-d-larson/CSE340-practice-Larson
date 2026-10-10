@@ -27,6 +27,18 @@ body {
             }
         }
     }
+
+    &.blue-theme {
+        background-color: #e3f2fd;
+    }
+
+    &.green-theme {
+        background-color: #e8f5e8;
+    }
+
+    &.red-theme {
+        background-color: #ffebee;
+    }
 }
 
 h1 {

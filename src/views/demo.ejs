@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<main>
+    <h1>Middleware Demo Page</h1>
+
+    <section>
+        <h2>Global Middleware Results</h2>
+        <%- greeting %>
+        <p>Current year: <%= currentYear %></p>
+        <p>Selected theme: <%= bodyClass %></p>
+    </section>
+
+    <section>
+        <h2>Query Parameters</h2>
+        <% const queryEntries = Object.entries(queryParams || {}); %>
+        <% if (queryEntries.length === 0) { %>
+            <p>No query parameters were provided. Try adding ?debug=true to the URL.</p>
+        <% } else { %>
+            <ul>
+                <% queryEntries.forEach(([key, value]) => { %>
+                    <li><%= key %>: <%= value %></li>
+                <% }) %>
+            </ul>
+        <% } %>
+    </section>
+
+    <section>
+        <h2>Route-Specific Middleware Results</h2>
+        <p>
+            This page is the only route that runs the demo header middleware.
+            That middleware adds two response headers before the page is rendered:
+        </p>
+        <ul>
+            <li><code>X-Demo-Page</code>: true</li>
+            <li><code>X-Middleware-Demo</code>: This is a middleware demo header</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How to Inspect the Headers</h2>
+        <p>
+            Open browser Developer Tools (F12 → Network → select request → Headers)
+            and look for <code>X-Demo-Page</code> and <code>X-Middleware-Demo</code>
+            on this page's response.
+        </p>
+    </section>
+
+    <p><a href="/">Return to the homepage</a></p>
+</main>
+
+<%- include('partials/footer') %>

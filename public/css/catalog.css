@@ -27,10 +27,14 @@
             }
         }
 
-        .course-id {
+        .course-id,
+        .course-department {
             margin: 0 0 4px;
             color: #2c5aa0;
             font-weight: bold;
+        }
+
+        .course-id {
             letter-spacing: 0.04em;
         }
 
@@ -57,10 +61,14 @@
         color: #2c5aa0;
     }
 
-    .course-id {
+    .course-id,
+    .course-department {
         margin: 0 0 4px;
         color: #2c5aa0;
         font-weight: bold;
+    }
+
+    .course-id {
         letter-spacing: 0.04em;
     }
 
