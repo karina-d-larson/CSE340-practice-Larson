@@ -42,3 +42,21 @@ img {
     height: auto;
     border-radius: 8px;
 }
+
+.error-image {
+    display: block;
+    max-width: 360px;
+    margin: 16px 0;
+}
+
+details {
+    margin-top: 24px;
+}
+
+pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+}
