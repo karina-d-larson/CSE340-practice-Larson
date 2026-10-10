@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+
+<main>
+    <header class="course-header">
+        <h1><%= course.title %></h1>
+        <p class="course-id"><%= course.id %></p>
+        <p class="course-credits"><%= course.credits %> credits</p>
+        <p class="course-description"><%= course.description %></p>
+    </header>
+
+    <section class="sections">
+        <div class="sections-header">
+            <h2>Available Sections</h2>
+            <nav class="sort-options" aria-label="Sort sections">
+                <a href="/catalog/<%= course.id %>" class="<%= currentSort === 'time' ? 'active' : '' %>">Time</a>
+                <a href="/catalog/<%= course.id %>?sort=professor" class="<%= currentSort === 'professor' ? 'active' : '' %>">Professor</a>
+                <a href="/catalog/<%= course.id %>?sort=room" class="<%= currentSort === 'room' ? 'active' : '' %>">Room</a>
+            </nav>
+        </div>
+        <div class="section-list">
+            <% sections.forEach((section) => { %>
+            <article class="section-card">
+                <p class="section-time"><%= section.time %></p>
+                <p class="section-room"><%= section.room %></p>
+                <p class="section-instructor"><%= section.professor %></p>
+            </article>
+            <% }) %>
+        </div>
+    </section>
+
+    <p class="back-link"><a href="/catalog">Back to Course Catalog</a></p>
+</main>
+
+<%- include('partials/footer') %>
