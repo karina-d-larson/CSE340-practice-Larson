@@ -1,0 +1,117 @@
+.faculty-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin-bottom: 20px;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.faculty-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 800px;
+
+    .faculty-card {
+        border: 1px solid #d5deea;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #fff;
+
+        &:hover {
+            box-shadow: 0 6px 16px rgba(44, 90, 160, 0.18);
+        }
+
+        h2 {
+            margin: 0 0 8px;
+
+            a {
+                color: #2c5aa0;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .faculty-department {
+            margin: 0 0 4px;
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+
+        .faculty-title {
+            margin: 0;
+            color: #444;
+        }
+    }
+}
+
+.faculty-header {
+    max-width: 800px;
+    margin: 0 auto 28px;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 8px;
+        color: #2c5aa0;
+    }
+
+    .faculty-title,
+    .faculty-department {
+        margin: 0 0 4px;
+        font-weight: bold;
+    }
+
+    .faculty-title {
+        color: #444;
+    }
+
+    .faculty-department {
+        color: #2c5aa0;
+    }
+}
+
+.faculty-details {
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px solid #d5deea;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+
+    p {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 0 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e6edf5;
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        span {
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+
+        a {
+            color: #2c5aa0;
+
+            &:hover {
+                color: #1d3f73;
+            }
+        }
+    }
+}
